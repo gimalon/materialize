@@ -5,11 +5,13 @@
     Materialize.updateTextFields = function() {
       var input_selector = 'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], textarea';
       $(input_selector).each(function(index, element) {
-        if ($(element).val().length > 0 || $(this).attr('placeholder') !== undefined || $(element)[0].validity.badInput === true) {
+        if ($(element).val().length > 0 || /*$(this).attr('placeholder') !== undefined ||*/ $(element)[0].validity.badInput === true) {
           $(this).siblings('label, i').addClass('active');
+          if ($(this).attr('placeholder') !== undefined) $(this).removeClass('hidden-placeholder');
         }
         else {
           $(this).siblings('label, i').removeClass('active');
+          if ($(this).attr('placeholder') !== undefined) $(this).addClass('hidden-placeholder');
         }
       });
     }
@@ -22,8 +24,9 @@
 
     // Add active if form auto complete
     $(document).on('change', input_selector, function () {
-      if($(this).val().length !== 0 || $(this).attr('placeholder') !== undefined) {
+      if($(this).val().length !== 0 /*|| $(this).attr('placeholder') !== undefined*/) {
         $(this).siblings('label, i').addClass('active');
+        if ($inputElement.attr('placeholder') !== undefined) $inputElement.removeClass('hidden-placeholder');
       }
       validate_field($(this));
     });
@@ -50,12 +53,14 @@
     // Add active when element has focus
     $(document).on('focus', input_selector, function () {
       $(this).siblings('label, i').addClass('active');
+      if ($(this).attr('placeholder') !== undefined) $(this).removeClass('hidden-placeholder');
     });
 
     $(document).on('blur', input_selector, function () {
       var $inputElement = $(this);
-      if ($inputElement.val().length === 0 && $inputElement[0].validity.badInput !== true && $inputElement.attr('placeholder') === undefined) {
+      if ($inputElement.val().length === 0 && $inputElement[0].validity.badInput !== true /*&& $inputElement.attr('placeholder') === undefined*/) {
         $inputElement.siblings('label, i').removeClass('active');
+        if ($inputElement.attr('placeholder') !== undefined) $inputElement.addClass('hidden-placeholder');
       }
       validate_field($inputElement);
     });

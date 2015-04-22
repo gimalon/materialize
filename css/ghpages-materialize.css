@@ -6219,18 +6219,26 @@ label {
    Text Inputs + Textarea
 ****************************/
 ::-webkit-input-placeholder {
-  color: #d1d1d1; }
+  color: #d1d1d1;
+  -webkit-transition: color .3s ease-out;
+  transition: color .3s ease-out; }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: #d1d1d1; }
+  color: #d1d1d1;
+  -moz-transition: color .3s ease-out;
+  transition: color .3s ease-out; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #d1d1d1; }
+  color: #d1d1d1;
+  -moz-transition: color .3s ease-out;
+  transition: color .3s ease-out; }
 
 :-ms-input-placeholder {
-  color: #d1d1d1; }
+  color: #d1d1d1;
+  -ms-transition: color .3s ease-out;
+  transition: color .3s ease-out; }
 
 input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
   background-color: transparent;
@@ -6373,6 +6381,21 @@ textarea {
   /* future version of deprecated 'word-wrap' */
   padding-top: 1.2rem;
   /* prevents text jump on Enter keypress */ }
+
+/* hide placeholder-inputs when not focused and have empty value */
+.hidden-placeholder::-webkit-input-placeholder {
+  color: transparent; }
+
+.hidden-placeholder:-moz-placeholder {
+  /* Firefox 18- */
+  color: transparent; }
+
+.hidden-placeholder::-moz-placeholder {
+  /* Firefox 19+ */
+  color: transparent; }
+
+.hidden-placeholder:-ms-input-placeholder {
+  color: transparent; }
 
 /***************
   Radio Buttons
