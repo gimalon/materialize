@@ -1,11 +1,11 @@
-(function(factory) {
+(function(factory) {/*
     if (typeof define === 'function' && define.amd) {
         define(['jquery', 'hammerjs'], factory);
     } else if (typeof exports === 'object') {
         factory(require('jquery'), require('hammerjs'));
-    } else {
+    } else {*/
         factory(jQuery, Hammer);
-    }
+    /*}*/
 }(function($, Hammer) {
     function hammerify(el, options) {
         var $el = $(el);
