@@ -31,16 +31,32 @@
 
 
     // Floating-Fixed table of contents
-    if ($('nav').length) {
-      $('.toc-wrapper').pushpin({ top: $('nav').height() });
-    }
-    else if ($('#index-banner').length) {
-      $('.toc-wrapper').pushpin({ top: $('#index-banner').height() });
-    }
-    else {
-      $('.toc-wrapper').pushpin({ top: 0 });
-    }
 
+    setTimeout(function() {
+      var tocWrapperHeight = 260; // Max height of ads.
+      var tocHeight = $('.toc-wrapper .table-of-contents').length ? $('.toc-wrapper .table-of-contents').height() : 0;
+      var socialHeight = 95; // Height of unloaded social media in footer.
+      var bottomOffset = $('footer').offset().top - socialHeight - tocHeight - tocWrapperHeight;
+
+      if ($('nav').length) {
+        $('.toc-wrapper').pushpin({
+          top: $('nav').height(),
+          bottom: bottomOffset
+        });
+      }
+      else if ($('#index-banner').length) {
+        $('.toc-wrapper').pushpin({
+          top: $('#index-banner').height(),
+          bottom: bottomOffset
+        });
+      }
+      else {
+        $('.toc-wrapper').pushpin({
+          top: 0,
+          bottom: bottomOffset
+        });
+      }
+    }, 100);
 
 
     // BuySellAds Detection
@@ -53,7 +69,7 @@
             setTimeout(checkForChanges, 500);
           }
           else {
-            var donateAd = $('<div id="carbonads"><span><a class="carbon-text" href="#" onclick="document.getElementById("paypal_donate").submit();"><img src="images/donate.png" /> Help support us by turning off adblock. If you still prefer to keep adblock on for this page but still want to support us, feel free to donate. Any little bit helps.</a></form></span></div>');
+            var donateAd = $('<div id="carbonads"><span><a class="carbon-text" href="#!" onclick="document.getElementById(\'paypal-donate\').submit();"><img src="images/donate.png" /> Help support us by turning off adblock. If you still prefer to keep adblock on for this page but still want to support us, feel free to donate. Any little bit helps.</a></form></span></div>');
 
             $bsa.append(donateAd);
           }
@@ -81,11 +97,11 @@
     }
 
     // Toggle Flow Text
-    var toggleFlowTextButton = $('#flow-toggle')
+    var toggleFlowTextButton = $('#flow-toggle');
     toggleFlowTextButton.click( function(){
       $('#flow-text-demo').children('p').each(function(){
           $(this).toggleClass('flow-text');
-        })
+        });
     });
 
 //    Toggle Containers on page
@@ -113,7 +129,7 @@
       }
     }
     if (is_touch_device()) {
-      $('#nav-mobile').css({ overflow: 'auto'})
+      $('#nav-mobile').css({ overflow: 'auto'});
     }
 
     // Set checkbox on forms.html to indeterminate
@@ -123,8 +139,9 @@
 
 
     // Plugin initialization
-    $('.slider').slider({full_width: true, indicators: false});
-    $('.tab-demo').show().tabs();
+    $('.carousel.carousel-slider').carousel({full_width: true});
+    $('.carousel').carousel();
+    $('.slider').slider({full_width: true});
     $('.parallax').parallax();
     $('.modal-trigger').leanModal();
     $('.scrollspy').scrollSpy();

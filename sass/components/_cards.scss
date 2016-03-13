@@ -1,6 +1,7 @@
 
 
 .card-panel {
+  transition: box-shadow .25s;
   padding: $card-padding;
   margin: $element-top-margin 0 $element-bottom-margin 0;
   border-radius: 2px;
@@ -10,15 +11,14 @@
 
 .card {
   position: relative;
-  overflow: hidden;
   margin: $element-top-margin 0 $element-bottom-margin 0;
   background-color: $card-bg-color;
+  transition: box-shadow .25s;
   border-radius: 2px;
   @extend .z-depth-1;
 
 
   .card-title {
-    color: #fff;
     font-size: 24px;
     font-weight: 300;
     &.activator {
@@ -31,9 +31,11 @@
     position: relative;
 
     .card-image {
+      max-height: 60%;
       overflow: hidden;
     }
     .card-content {
+      max-height: 40%;
       overflow: hidden;
     }
     .card-action {
@@ -46,36 +48,14 @@
 
   &.small {
     height: 300px;
-
-    .card-image {
-      height: 150px;
-    }
-    .card-content {
-      height: 150px;
-    }
-
   }
 
   &.medium {
     height: 400px;
-
-    .card-image {
-      height: 250px;
-    }
-    .card-content {
-      height: 150px;
-    }
   }
 
   &.large {
     height: 500px;
-
-    .card-image {
-      height: 330px;
-    }
-    .card-content {
-      height: 170px;
-    }
   }
 
 
@@ -84,6 +64,7 @@
 
     // Image background for content
     img {
+      display: block;
       border-radius: 2px 2px 0 0;
       position: relative;
       left: 0;
@@ -94,6 +75,7 @@
     }
 
     .card-title {
+      color: $card-bg-color;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -106,7 +88,6 @@
     padding: $card-padding;
     border-radius: 0 0 2px 2px;
 
-
     p {
       margin: 0;
       color: inherit;
@@ -117,34 +98,41 @@
   }
 
   .card-action {
+    position: relative;
+    background-color: inherit;
     border-top: 1px solid rgba(160,160,160,.2);
     padding: $card-padding;
+    z-index: 2;
 
-    a {
-      color: color("orange", "accent-2");
+    a:not(.btn):not(.btn-large):not(.btn-floating) {
+      color: $card-link-color;
       margin-right: $card-padding;
-      @include transition(color .3s ease);
+      transition: color .3s ease;
       text-transform: uppercase;
 
-      &:hover { color: lighten(color("orange", "accent-2"), 20%); }
+      &:hover { color: $card-link-color-light; }
+    }
+
+    & + .card-reveal {
+      z-index: 1;
+      padding-bottom: 64px;
     }
   }
 
   .card-reveal {
     padding: $card-padding;
     position: absolute;
-    background-color: #FFF;
+    background-color: $card-bg-color;
     width: 100%;
     overflow-y: auto;
     top: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 3;
     display: none;
 
     .card-title {
       cursor: pointer;
       display: block;
     }
-
   }
 }
