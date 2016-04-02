@@ -9,7 +9,7 @@
 
 **Notice that this is NOT the offical AMD-compatible version, and I won't keep updating it with latest commit (just stable release), so just use the `dist/js/materialize.js`.**
 
-This modified version is tested and passed on (curl.js)[https://github.com/cujojs/curl], I'm not sure that it would compatible with other AMD module.
+This modified version is tested and passed on [curl.js](https://github.com/cujojs/curl), I'm not sure that it would compatible with other AMD module.
 
 After required it at the first time, please do `Waves.displayEffect()` to show waves, like this:
 
@@ -24,7 +24,7 @@ require(['jquery']).next(['materialize'], function(Materialize){
 
 For modified parts, see original issue here: https://github.com/Dogfalo/materialize/issues/634#issuecomment-183846293
 
-### Current Version : v0.97.5
+### Current Version : v0.97.6
 
 ## Sass Requirements:
 - Ruby Sass 3.3+, LibSass 0.6+
@@ -33,6 +33,15 @@ For modified parts, see original issue here: https://github.com/Dogfalo/material
 Chrome 35+, Firefox 31+, Safari 7+, IE 10+
 
 ## Changelog
+- v0.97.6 (April 1st)
+  - **Removed deprecated material icons from project**
+  - **Changed /font directory to /fonts**
+  - Datepicker and ScrollSpy now compatible with jQuery 2.2.x
+  - Responsive tables now work with empty cells
+  - Added focus states to checkboxes, switches, and radio buttons
+  - Sidenav and Modals no longer cause flicker with scrollbar
+  - Materialbox overflow and z-index issues fixed
+  - Added new option for Card actions within a Card reveal
 - v0.97.5 (Dec 21, 2015)
   - Fixed Meteor package crash
 - v0.97.4 (Dec 20, 2015)

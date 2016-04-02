@@ -3,7 +3,7 @@
 
 **Notice that this is NOT the offical AMD-compatible version, and I won't keep updating it with latest commit (just stable release), so just use the `dist/js/materialize.js`.**
 
-This modified version is tested and passed on (curl.js)[https://github.com/cujojs/curl], I'm not sure that it would compatible with other AMD module.
+This modified version is tested and passed on [curl.js](https://github.com/cujojs/curl), I'm not sure that it would compatible with other AMD module.
 
 After required it at the first time, please do `Waves.displayEffect()` to show waves, like this:
 
