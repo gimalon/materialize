@@ -25,7 +25,10 @@
 @import "components/buttons";
 @import "components/dropdown";
 @import "components/waves";
-@import "components/modal";
+
+// disabled materialize modals for Gimalon's modals
+//@import "components/modal";
+
 @import "components/collapsible";
 @import "components/chips";
 @import "components/materialbox";
