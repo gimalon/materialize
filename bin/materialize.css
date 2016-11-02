@@ -4950,7 +4950,7 @@ small {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #ffa726;
+  background-color: #2196F3;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
@@ -4958,7 +4958,7 @@ small {
 }
 
 .btn:hover, .btn-large:hover {
-  background-color: #ffb140;
+  background-color: #39a1f4;
 }
 
 .btn-floating {
@@ -5496,7 +5496,7 @@ select:focus {
 
 button:focus {
   outline: none;
-  background-color: #ffaf3a;
+  background-color: #349ff4;
 }
 
 label {
@@ -6780,11 +6780,11 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav a.btn:hover, .side-nav a.btn-large:hover, .side-nav a.btn-large:hover {
-  background-color: #ffb140;
+  background-color: #39a1f4;
 }
 
 .side-nav a.btn-floating:hover {
-  background-color: #ffa726;
+  background-color: #2196F3;
 }
 
 .side-nav li > a > i,
