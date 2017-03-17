@@ -24,7 +24,8 @@ require(['jquery']).next(['materialize'], function(Materialize){
 
 For modified parts, see original issue here: https://github.com/Dogfalo/materialize/issues/634#issuecomment-183846293
 
-### Current Version : v0.97.7
+
+### Current Version : v0.97.8
 
 ## Sass Requirements:
 - Ruby Sass 3.3+, LibSass 0.6+
@@ -33,6 +34,13 @@ For modified parts, see original issue here: https://github.com/Dogfalo/material
 Chrome 35+, Firefox 31+, Safari 7+, IE 10+
 
 ## Changelog
+- v0.97.8 (October 30th)
+  - **Refactored Modal plugin**
+  - Tabs now supported in navbar
+  - Chips data can now be reinitiailized
+  - Minor side nav fixes
+  - FAB to toolbar component added
+  - Fixed dropdown options bug
 - v0.97.7 (July 23rd)
   - Basic horizontal cards
   - Carousel bug fixes and new features
@@ -51,12 +59,6 @@ Chrome 35+, Firefox 31+, Safari 7+, IE 10+
   - Added new option for Card actions within a Card reveal
 - v0.97.5 (Dec 21, 2015)
   - Fixed Meteor package crash
-- v0.97.4 (Dec 20, 2015)
-  - Added Jasmine testing with Travis CI
-  - Select bugfixes
-  - Grid Offset bugfix
-  - Dropdown overflow bugfix
-  - Range slider error bugfix
 
 
 
